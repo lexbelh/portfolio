@@ -3,50 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de Léa D'arrigo (Lexbelh)</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>La Vie de Lexbelh</title>
     <style>
+        /* Import de la police Poppins */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+        /* Style général du corps */
         body {
-            font-family: 'Roboto', sans-serif; /* Police classe de base */
-            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f0f6;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333; /* Texte en noir par défaut */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            text-align: center;
+            color: #333;
         }
+
+        /* Titre principal en rose clair et avec effet de mouvement */
+        h1 {
+            color: #ff99cc;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            animation: slide 5s infinite alternate;
+        }
+
+        /* Animation de déplacement pour le titre */
+        @keyframes slide {
+            0% {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            50% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(50px);
+                opacity: 0;
+            }
+        }
+
+        /* Container pour tout le contenu */
         .container {
             width: 80%;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
         }
-        h1 {
-            font-family: 'Playfair Display', serif; /* Police élégante pour le titre */
-            color: #FF1493; /* Rose pour le titre */
-            text-align: center;
-            font-size: 3em;
-            margin-bottom: 20px;
+
+        /* Style des bulles de texte */
+        .bubble {
+            background-color: #ff66b2;
+            color: white;
+            padding: 25px;
+            margin: 20px;
+            border-radius: 50%;
+            display: inline-block;
+            max-width: 90%;
+            text-align: left;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: grow 0.5s ease-in-out;
         }
-        p {
-            font-size: 1.1em;
-            margin-bottom: 15px;
+
+        /* Animation pour la croissance des bulles */
+        @keyframes grow {
+            0% {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
-        .lexbelh {
-            color: #FF1493; /* Rose pour le mot "Lexbelh" */
+
+        /* Effet de fleur avec la pseudo-classe :before */
+        .bubble:before {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff66b2;
+            transform: rotate(45deg);
+            top: -10px;
+            left: 50%;
+            margin-left: -10px;
+        }
+
+        /* Ajout d'une ombre pour l'effet de fleur */
+        .bubble:after {
+            content: "";
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 102, 178, 0.6), rgba(255, 102, 178, 0) 60%);
+            z-index: -1;
+        }
+
+        /* Texte dans chaque bulle */
+        .bubble p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* Couleur des mots importants */
+        .highlight {
             font-weight: bold;
+            color: #ff99cc;
         }
     </style>
 </head>
 <body>
+
+    <!-- Titre du portfolio -->
+    <h1>La Vie de Lexbelh</h1>
+
+    <!-- Container pour la présentation -->
     <div class="container">
-        <h1>La vie de <span class="lexbelh">LEXBELH</span></h1>
-        <p>Bonjour, je m'appelle Léa D'arrigo mais mes proches m'appellent <span class="lexbelh">Lexbelh</span>.</p>
-        <p>J'ai 20 ans, née le 30 mars 2004.</p>
-        <p>J'aime le sport de manière générale, mais j'ai une préférence pour les sports collectifs. Par ailleurs, je pratique le football depuis 5 années maintenant au poste de défenseur central, et je suis également capitaine de mon équipe depuis ces 5 ans.</p>
-        <p>Je fais une licence dans la commercialisation de produits et services sportifs à l'école ILEPS, je suis en 3ème année. Cette licence se déroule en alternance, je travaille donc, en parallèle, chez Décathlon.</p>
-        <p>A l'opposé du sport, je suis une passionnée de mode et de tout ce qui touche à la beauté, le maquillage et les soins.</p>
+
+        <!-- Première bulle de texte -->
+        <div class="bubble">
+            <p><span class="highlight">Léa D’arrigo</span>, 20 ans, née le 30 mars 2004. Passionnée de mode et de beauté depuis toute petite, ce sont ces univers qui animent mes journées et m'incitent à passer beaucoup de temps sur les réseaux sociaux.</p>
+        </div>
+
+        <!-- Deuxième bulle de texte -->
+        <div class="bubble">
+            <p>Outre la mode, le sport occupe une place importante dans ma vie, notamment les sports collectifs. Inspirée par la Coupe du Monde féminine de football 2019, j’ai commencé le foot et suis devenue capitaine de mon équipe, un rôle que je tiens depuis 6 ans maintenant.</p>
+        </div>
+
+        <!-- Troisième bulle de texte -->
+        <div class="bubble">
+            <p>J’ai également suivi des modules pour devenir entraîneuse de football, en particulier pour les jeunes catégories U6/U9 et U11. J'ai eu la chance de coacher pendant 2 saisons entre 2019 et 2021, une expérience qui m’a beaucoup apportée.</p>
+        </div>
+
+        <!-- Quatrième bulle de texte -->
+        <div class="bubble">
+            <p>Actuellement étudiante à l’ILEPS en 2e année de licence dans la commercialisation de produits et services sportifs, j’effectue une alternance chez <span class="highlight">Décathlon à Groslay</span> en tant que vendeuse et hôtesse caisse et accueil depuis plus d’un an.</p>
+        </div>
+
+        <!-- Cinquième bulle de texte -->
+        <div class="bubble">
+            <p>Mon parcours professionnel est principalement tourné vers la vente. J'ai travaillé dans plusieurs enseignes comme <span class="highlight">La Halle aux Vêtements</span> et effectué un stage chez Décathlon, ce qui m'a permis de renforcer mes compétences commerciales et mon sens du service client.</p>
+        </div>
+
     </div>
+
 </body>
 </html>
+
